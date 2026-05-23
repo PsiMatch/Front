@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CtaSection() {
   return (
@@ -7,9 +8,11 @@ export default function CtaSection() {
       <p className="text-[#FFF7FB] text-center font-['Inter'] text-[18px] not-italic font-normal leading-[28px]">
         Da el primer paso hoy. Nuestro proceso de matching toma menos de 5 minutos y es completamente gratuito.
       </p>
-      <Button className="bg-white text-iris hover:bg-white/90 py-2 px-4 rounded-full shadow-lg">
-        Comenzar el cuestionario
-      </Button>
+      <Link href="/form">
+        <Button className="bg-white text-iris hover:bg-white/90 py-2 px-4 rounded-full shadow-lg">
+          Comenzar el cuestionario
+        </Button>
+      </Link>
     </section>
   );
 }
