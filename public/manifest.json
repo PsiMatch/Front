@@ -3,8 +3,10 @@
   "short_name": "PsiMatch",
   "description": "Encuentra el psicólogo que realmente resuena contigo",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
+  "scope": "/",
   "background_color": "#FAF9F6",
+  "lang": "es",
   "theme_color": "#5D3FD3",
   "orientation": "portrait",
   "icons": [
