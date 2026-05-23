@@ -74,7 +74,7 @@ export default function ResultPage() {
                         </p>
                     </div>
                 </div>
-                <Link href="/form">
+                <Link href="/directory">
                     <Button>
                         Ver psicólogos recomendado
                     </Button>

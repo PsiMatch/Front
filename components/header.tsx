@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
+    const pathname = usePathname();
     const [activeId, setActiveId] = useState("");
     const [isScrollingFromClick, setIsScrollingFromClick] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -59,6 +61,8 @@ export default function Header() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [isScrollingFromClick]);
+
+    if (pathname !== "/") return null;
 
     return (
         <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-sand/20 flex flex-row py-3 px-6 lg:px-30 justify-between items-center">
