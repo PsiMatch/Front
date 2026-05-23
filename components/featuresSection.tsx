@@ -2,9 +2,9 @@ import { Card } from "@/components/ui/card";
 
 export default function FeaturesSection() {
   return (
-    <section id="filosofia" className="flex py-20 px-30 flex-col gap-20 w-full bg-sand/30 items-center justify-center">
+    <section id="filosofia" className="flex py-20 px-6 lg:px-30 flex-col gap-20 w-full bg-sand/30 items-center justify-center">
       <h2 className="text-3xl font-semibold">Un enfoque más humano</h2>
-      <div className="flex flex-row justify-center items-center gap-6">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-6">
         <Card className="flex flex-col p-12 gap-4">
           <div className="flex items-center justify-center p-4 rounded-full bg-sand/50 w-fit h-fit">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

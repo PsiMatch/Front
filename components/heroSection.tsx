@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export default function HeroSection() {
     return (
-        <section className="p-30 w-full flex flex-row gap-12 justify-center items-center">
+        <section className="p-6 lg:p-30 w-full flex flex-col lg:flex-row gap-12 justify-center items-center">
             <div className="flex flex-col gap-6 w-full">
                 <h1 className="text-[48px] not-italic font-bold leading-[56px] tracking-[-0.96px]">Encuentra el psicólogo que realmente resuena contigo</h1>
                 <p>Una experiencia humana y personalizada para tu bienestar mental. Te conectamos con profesionales verificados basados en tus necesidades únicas.</p>

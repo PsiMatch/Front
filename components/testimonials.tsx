@@ -19,10 +19,10 @@ function StarHalf() {
 
 export default function Testimonials() {
   return (
-    <section id="resenas" className="px-30 py-20 flex flex-col justify-center items-center bg-sand/20 w-full gap-16">
-      <div className="flex flex-row justify-center items-stretch gap-8 w-full max-w-7xl">
+    <section id="resenas" className="px-6 lg:px-30 py-20 flex flex-col justify-center items-center bg-sand/20 w-full gap-16">
+      <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8 w-full max-w-7xl">
         {/* Card 1 */}
-        <Card className="flex flex-col p-10 gap-6 w-full md:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
+        <Card className="flex flex-col p-10 gap-6 w-full lg:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
           <div className="flex flex-col gap-6">
             <div className="flex flex-row gap-1">
               <StarFilled />
@@ -39,7 +39,7 @@ export default function Testimonials() {
         </Card>
 
         {/* Card 2 */}
-        <Card className="flex flex-col p-10 gap-6 w-full md:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
+        <Card className="flex flex-col p-10 gap-6 w-full lg:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
           <div className="flex flex-col gap-6">
             <div className="flex flex-row gap-1">
               <StarFilled />
@@ -56,7 +56,7 @@ export default function Testimonials() {
         </Card>
 
         {/* Card 3 */}
-        <Card className="flex flex-col p-10 gap-6 w-full md:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
+        <Card className="flex flex-col p-10 gap-6 w-full lg:w-1/3 bg-sand/50 rounded-3xl border border-sand/20 shadow-sm justify-between">
           <div className="flex flex-col gap-6">
             <div className="flex flex-row gap-1">
               <StarFilled />

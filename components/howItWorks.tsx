@@ -1,7 +1,7 @@
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="px-30 py-20 flex flex-row gap-20 w-full items-center justify-center">
-      <div className="flex flex-col gap-6 w-[35%]">
+    <section id="como-funciona" className="px-6 lg:px-30 py-20 flex flex-col lg:flex-row gap-20 w-full items-center justify-center">
+      <div className="flex flex-col gap-6 w-full lg:w-[35%]">
         <h2 className="text-3xl font-semibold">Un enfoque más humano</h2>
         <p className="font-inter text-zinc-600">Tres simples pasos para conectar con el profesional adecuado. Nuestro algoritmo prioriza la compatibilidad humana por encima de todo.</p>
       </div>
