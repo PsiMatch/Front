@@ -3,76 +3,7 @@
 import { SlidersHorizontal, Search, Clock, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState, useMemo } from "react";
-
-interface Therapist {
-    id: number;
-    name: string;
-    image: string;
-    specialty: string;
-    rating: number;
-    reviews: number;
-    tags: string[];
-    price: number;
-    originalPrice?: number;
-    timeSlot?: string;
-    isFeatured: boolean;
-    featuredText?: string;
-    ctaText: string;
-}
-
-const THERAPISTS: Therapist[] = [
-    {
-        id: 1,
-        name: "Dra. Elena Vargas",
-        image: "/elena_vargas.png",
-        specialty: "Psicología Clínica\nCognitivo-Conductual",
-        rating: 4.9,
-        reviews: 124,
-        tags: ["Ansiedad", "Depresión"],
-        price: 60,
-        isFeatured: false,
-        ctaText: "Ver perfil"
-    },
-    {
-        id: 2,
-        name: "Lic. Marcos Ruiz",
-        image: "/marcos_ruiz.png",
-        specialty: "Terapia Sistémica y de\nPareja",
-        rating: 4.8,
-        reviews: 98,
-        tags: ["Pareja", "Familia"],
-        price: 45,
-        originalPrice: 70,
-        timeSlot: "hoy 18:00",
-        isFeatured: true,
-        featuredText: "Slot cancelado con precio especial",
-        ctaText: "Reservar"
-    },
-    {
-        id: 3,
-        name: "Dra. Sofía Costa",
-        image: "/sofia_costa.png",
-        specialty: "Psicoanálisis Relacional",
-        rating: 5.0,
-        reviews: 45,
-        tags: ["Trauma", "Identidad"],
-        price: 65,
-        isFeatured: false,
-        ctaText: "Ver perfil"
-    },
-    {
-        id: 4,
-        name: "Dr. Javier Silva",
-        image: "/javier_silva.png",
-        specialty: "Terapias de Tercera\nGeneración (ACT,\nMindfulness)",
-        rating: 4.7,
-        reviews: 210,
-        tags: ["Estrés", "Crecimiento Personal"],
-        price: 55,
-        isFeatured: false,
-        ctaText: "Ver perfil"
-    }
-];
+import { THERAPISTS } from "@/lib/therapists";
 
 const ALL_TAGS = [
     "Ansiedad",
@@ -82,7 +13,9 @@ const ALL_TAGS = [
     "Trauma",
     "Identidad",
     "Estrés",
-    "Crecimiento Personal"
+    "Crecimiento Personal",
+    "Transiciones de vida",
+    "Burnout"
 ];
 
 export default function DirectoryPage() {
@@ -120,7 +53,7 @@ export default function DirectoryPage() {
             {/* Top Title & Filters Bar */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 w-full max-w-7xl mx-auto">
                 <div className="flex flex-col gap-1.5">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#111111] tracking-tight">Directorio</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold text-[#111111] tracking-tight font-heading">Directorio</h1>
                     <p className="text-zinc-500 font-inter text-base">
                         Encuentra al profesional adecuado para ti.
                     </p>
@@ -227,7 +160,7 @@ export default function DirectoryPage() {
                                             className="w-20 h-20 rounded-full object-cover border border-[#E5DCD0] shadow-sm shrink-0"
                                         />
                                         <div className="flex flex-col gap-1 min-w-0">
-                                            <h2 className="text-[20px] font-bold text-[#111111] leading-tight tracking-tight">
+                                            <h2 className="text-[20px] font-bold text-[#111111] leading-tight tracking-tight font-heading">
                                                 {therapist.name}
                                             </h2>
                                             <p className="text-[13px] font-semibold text-zinc-500 font-inter leading-relaxed whitespace-pre-line">
@@ -239,7 +172,7 @@ export default function DirectoryPage() {
                                                     {therapist.rating.toFixed(1)}
                                                 </span>
                                                 <span className="text-sm text-zinc-400 font-inter font-normal">
-                                                    ({therapist.reviews})
+                                                    ({therapist.reviewsCount})
                                                 </span>
                                             </div>
                                         </div>
@@ -283,15 +216,25 @@ export default function DirectoryPage() {
                                             </>
                                         ) : (
                                             <span className="font-bold text-[#111111] text-[17px] font-inter">
-                                                €{therapist.price}{" "}
-                                                <span className="text-sm font-normal text-zinc-400">/ sesión</span>
+                                                {therapist.id === "clara-mendoza" ? (
+                                                    <>
+                                                        $1,200 <span className="text-xs font-medium text-zinc-500">MXN / sesión</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        €{therapist.price} <span className="text-sm font-normal text-zinc-400">/ sesión</span>
+                                                    </>
+                                                )}
                                             </span>
                                         )}
                                     </div>
 
-                                    <button className="bg-[#1E1C18] hover:bg-black text-white rounded-xl px-5 py-2.5 font-bold text-sm transition-all duration-200 active:scale-[0.98] cursor-pointer">
+                                    <Link 
+                                        href={`/directory/${therapist.id}`}
+                                        className="bg-[#1E1C18] hover:bg-black text-white rounded-xl px-5 py-2.5 font-bold text-sm transition-all duration-200 active:scale-[0.98] text-center"
+                                    >
                                         {therapist.ctaText}
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
